@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdio.h>
-
 #include "debug.h"
 #include "syscode.h"
 
-int log_level = 1;
+//uint8 log_level = 1;
 
 void log_level_dump()
 {
@@ -24,5 +23,6 @@ int printf_buf(void *buf, int size)
         printf("%c", head[i]);
 	}
 	printf("\n");
+
 	return SUCCESS;
 }

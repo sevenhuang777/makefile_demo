@@ -24,8 +24,6 @@ int main(int argc, char* argv[])
     char sz_str[]="Hello, welcome to linux world!";
     int rv;
 	
-    LOG(5);
-    TREE;
     char sz_filename[]="hello.txt";
 	int fd = -1;
 	fd = open(sz_filename, 0x664 | O_WRONLY);
@@ -41,6 +39,10 @@ int main(int argc, char* argv[])
 	close(fd);
 	CALL(test_fun,(0));
 	log_level_dump();
-
+    log_level = 0x4;
+    //printf("%d \n", sizeof(long long));
+    LOG_INFO("haha %d\n", 48);
+    LOG_WAR("haha %d\n", 48);
+	LOG_ERR("haha %d\n", 48);
 	printf("hello world!\n");
 }
