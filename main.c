@@ -23,20 +23,21 @@ int main(int argc, char* argv[])
 {
     char sz_str[]="Hello, welcome to linux world!";
     int rv;
-	
-    char sz_filename[]="hello.txt";
-	int fd = -1;
-	fd = open(sz_filename, 0x664 | O_WRONLY);
-    if(fd < 0)
-	    perror("open error");
 
-	rv = 0;
-    rv = write(fd, sz_str, sizeof(sz_str));
-	if(rv == -1) {
-		perror("write error");
-    }
+	debug_level_init(INFO_LEVEL|WAR_LEVEL|ERR_LEVEL);
+    //char sz_filename[]="hello.txt";
+	//int fd = -1;
+	//fd = open(sz_filename, 0x664 | O_WRONLY);
+    //if(fd < 0)
+	//    perror("open error");
+
+	//rv = 0;
+    //rv = write(fd, sz_str, sizeof(sz_str));
+	//if(rv == -1) {
+	//	perror("write error");
+    //}
 		
-	close(fd);
+	//close(fd);
 	CALL(test_fun,(0));
 	log_level_dump();
     log_level = 0x4;

@@ -1,19 +1,23 @@
-objects = main.o debug.o
+# Makefile for whole project
+exe = run
+objects = main.o 
+objects += debug.o
+#sources = main.c
 
-run:$(objects)
-	cc -o run $(objects)
-	rm $(objects)
+exe:$(objects)
+	cc -o $(exe) $^
+	-$(RM) $^
 
 .PHONY:clean
 clean:
-	rm run
+	-$(RM) $(exe)
 
 .PHONY:clean.obj
 clean.obj:
-	rm $(objects)
+	-$(RM) $(objects)
 
 .PHONY:clean.all
 clean.all:
-	rm run $(objects)
+	-$(RM) $(exe) $(objects)
 
 

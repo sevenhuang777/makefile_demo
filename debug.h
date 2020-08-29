@@ -33,7 +33,7 @@ do { \
     int _rv; \
     _rv = fun argu; \
     if(_rv != SUCCESS) { \
-        printf("error code is: %d\n", _rv); \
+        LOG_ERR("error code is: %d\n", _rv); \
 	} \
 } while(0)
 
@@ -42,11 +42,12 @@ do { \
     int _rv; \
     _rv = fun (); \
     if(_rv != SUCCESS) { \
-        printf("error code is: %d\n", _rv); \
+        LOG_ERR("error code is: %d\n", _rv); \
 	} \
 } while(0)
 
+extern void debug_level_init(uint8 level);
 extern void log_level_dump();
-extern int printf_buf(void *buf, int size);
+extern int32 printf_buf(void *buf, uint32 size);
 
 #endif /* __DEBUG_H__ */

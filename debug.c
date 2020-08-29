@@ -3,16 +3,19 @@
 #include "debug.h"
 #include "syscode.h"
 
-//uint8 log_level = 1;
+void debug_level_init(uint8 level)
+{
+	log_level = (level & 0xF);
+}
 
 void log_level_dump()
 {
 	printf("log_level = %d\n", log_level);
 }
 
-int printf_buf(void *buf, int size)
+int32 printf_buf(void *buf, uint32 size)
 {
-	int i;
+	uint32 i;
 	char *head;
 	if (buf == NULL || size < 0) {
         return ERROR;
