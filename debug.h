@@ -49,5 +49,8 @@ do { \
 extern void debug_level_init(uint8 level);
 extern void log_level_dump();
 extern int32 printf_buf(void *buf, uint32 size);
+extern void system_log_info_save(const char *fmt, ...);
+extern void system_log_fd_open(void);
+extern void system_log_fd_close(void);
 
 #endif /* __DEBUG_H__ */

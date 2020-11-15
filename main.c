@@ -25,6 +25,15 @@ int main(int argc, char* argv[])
     int rv;
 
 	debug_level_init(INFO_LEVEL|WAR_LEVEL|ERR_LEVEL);
+	system_log_fd_open();
+	system_log_info_save("haha %d\n", 48);
+	system_log_info_save("system log test line 1\n");
+	system_log_info_save("system log test line 2\n");
+	system_log_fd_close();
+
+	system_log_fd_open();
+	system_log_info_save("system log test line 3\n");
+	system_log_fd_close();
     //char sz_filename[]="hello.txt";
 	//int fd = -1;
 	//fd = open(sz_filename, 0x664 | O_WRONLY);
@@ -36,14 +45,14 @@ int main(int argc, char* argv[])
 	//if(rv == -1) {
 	//	perror("write error");
     //}
-		
+
 	//close(fd);
-	CALL(test_fun,(0));
-	log_level_dump();
-    log_level = 0x4;
+	//CALL(test_fun,(0));
+	//log_level_dump();
     //printf("%d \n", sizeof(long long));
-    LOG_INFO("haha %d\n", 48);
-    LOG_WAR("haha %d\n", 48);
-	LOG_ERR("haha %d\n", 48);
-	printf("hello world!\n");
+    //LOG_INFO("haha %d\n", 48);
+    //LOG_WAR("haha %d\n", 48);
+	//LOG_ERR("haha %d\n", 48);
+
+    
 }
